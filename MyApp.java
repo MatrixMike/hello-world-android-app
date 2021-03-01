@@ -102,7 +102,7 @@ public class MyApp extends Application {
             Toast.makeText(this, "One", lenToast).show();
             Toast.makeText(this, "Two", lenToast).show();
             Toast.makeText(this, "Three", lenToast).show();
-
+// TODO  Only first Toast appears on LENOVO 8.1.0 API 27 -  Could NO Q be implemented or Toasts too rapid?
             Pattern p = Pattern.compile(REGEX);
             String[] items = p.split(INPUT);
             for (String s : items) {
