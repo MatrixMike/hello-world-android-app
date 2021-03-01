@@ -45,14 +45,14 @@ public class MyApp extends Application {
         SensorManager mngr = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 
     }
-    /* public static void stream_from_function() {  // add retro lambda
+/*     public static void stream_from_function() {  // add retro lambda
         Stream.iterate(0, n -> n + 1)
                 .limit(7)
                 .skip(0)
                         //	.filter(w -> (w % 5) == 0)
                 .forEach(System.out::println);
-    }
-    */
+    }*/
+
 
     /**
      * The default app tracker. If this method returns null you forgot to either set
@@ -78,6 +78,8 @@ public class MyApp extends Application {
 
         // TODO: Replace the tracker-id with your app one from https://www.google.com/analytics/web/
         // TODO: replaced UA with ~ from lambda 1 UA-70607872-1
+        // TODO: consolidate tracker numbers A
+        // TODO: consolidate tracker numbers B see also manifest
         tracker = analytics.newTracker("UA-70607872-1");
         List<String> list = new ArrayList<>(Arrays.asList("Alpha", "Bravo", "Charlie"));
 
@@ -93,17 +95,18 @@ public class MyApp extends Application {
         SensorManager mngr = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         //  if(getTempSensors() == null) {
         hassensor = false;
+        int lenToast = Toast.LENGTH_LONG;
         for (int i = 0; i < 5; i++) {
             CharSequence text = "a word " + Integer.toString(3) + " " + Integer.toString(i);
-            Toast.makeText(this, text, Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "One", Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "Two", Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "Three", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, text, lenToast).show();
+            Toast.makeText(this, "One", lenToast).show();
+            Toast.makeText(this, "Two", lenToast).show();
+            Toast.makeText(this, "Three", lenToast).show();
 
             Pattern p = Pattern.compile(REGEX);
             String[] items = p.split(INPUT);
             for (String s : items) {
-                Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, s, lenToast).show();
                 //  System.out.println(s);
             }
 
